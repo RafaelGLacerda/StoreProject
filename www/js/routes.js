@@ -31,7 +31,7 @@ var app = new Framework7({
 		},
 		pageInit: function (event, page) {
 		// fazer algo quando a página for inicializada
-     // app.views.main.router.navigate('/detalhes/');
+       app.views.main.router.navigate('/favoritos/');
     $.getScript('js/index.js');
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
@@ -64,6 +64,9 @@ var app = new Framework7({
       slidesPerView: 3,
       spaceBetween: 10,
       freeMode: true,
+      delay: 3000,
+      autoplay: true,
+      loop: true,
       breakpoints: {
         50:{
           slidesPerView: 3,
@@ -110,8 +113,8 @@ var app = new Framework7({
 	  }
     },
     {
-      path: '/link3/',
-      url: 'link3.html',
+      path: '/favoritos/',
+      url: 'favoritos.html',
       animate: false,
 	  on: {
 		pageBeforeIn: function (event, page) {

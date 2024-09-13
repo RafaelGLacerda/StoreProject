@@ -112,14 +112,15 @@ form{
 
 #search{
     width: 90%;
-    height: 45px;
+    height: 50px;
     border-radius: 10px;
     margin: auto;
     padding: 10px 20px;
     background: var(--gelo);
-}
+    background-color: 1px solid black;
+} 
 
-::placeholder{
+.placeholder{
     color: #b3afaf;
 }
 

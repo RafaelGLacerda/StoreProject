@@ -40,7 +40,7 @@ fetch('js/backend.json')
         app.views.main.router.navigate('/detalhes/');
     });
 
-    }, 1200);
+    }, 700);
 
 
 })  

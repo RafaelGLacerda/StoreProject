@@ -31,7 +31,8 @@ var app = new Framework7({
 		},
 		pageInit: function (event, page) {
 		// fazer algo quando a página for inicializada
-       app.views.main.router.navigate('/favoritos/');
+       // app.views.main.router.navigate('/favoritos/');
+      // app.views.main.router.navigate('/carrinho/');
     $.getScript('js/index.js');
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,

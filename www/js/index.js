@@ -40,9 +40,8 @@ fetch('js/backend.json')
         app.views.main.router.navigate('/detalhes/');
     });
 
+
     }, 700);
-
-
 })  
 .catch(error => console.error('Erro ao fazer fetch dos dados: ' +error));
 

@@ -201,8 +201,9 @@ form{
     flex: 45%;
     margin-right: 5px;
     margin-bottom: 10px;
-
+    position: relative;
   }
+
   .img-container{
     display: flex;
     align-items: center;
@@ -211,6 +212,16 @@ form{
     height: 180px;
     border-radius: 10px;
     background: var(--gelo);
+    cursor: pointer;
+  }
+  .item-card{
+    pointer-events: none;
+  }
+  .img-container{
+    pointer-events: auto;
+  }
+  .heartMenu{
+    pointer-events: auto;
   }
   .img-container img{
     max-width: 150px;

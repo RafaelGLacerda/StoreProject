@@ -1,34 +1,65 @@
-:root{
+:root {
     --branco: #ffff;
     --gelo: #f1f1f1;
     --verde: #19c463;
     --preto: #2a2a2a;
 }
-.navbar{
+
+.navbar {
     font-weight: 600;
-    margin-left: 5%;
     color: Crimson;
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
     align-items: center;
-    justify-content: space-between;
+    padding: 20px; /* Espaçamento superior */
 }
-.title-fav{
-    font-weight: 600;
-    margin-left: 5%;
+
+.title-fav {
+    display: flex;
+    align-items: center; /* Alinha o texto e o ícone verticalmente */
+    margin-left: -3%;
+    font-size: 24px; /* Ajuste o tamanho da fonte do título */
+    color: crimson;
+   
 }
-.ri-heart-fill{
-        width: 40px;
-        height: 40px;
-        background: Crimson;
-        display: flex;
+
+.heart {
+    width: 40px;
+    height: 40px;
+    background: Crimson;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px; /* Espaço entre o título e o ícone */
+    border-radius: 50%;
+    border: 1px solid var(--gelo);
+    font-size: 24px;
+    color: var(--preto);
+}
+.heartMenu{
+        width: 10px;
+        height: 10px;
+        background: var(--branco);
+        border-radius: 50%;  
         align-items: center;
         justify-content: center;
-        margin-right: 5%;
-        border-radius: 50%;
-        border: 1px solid var(--gelo);
-        font-size:  24px;
         color: var(--preto);
-        margin-left: 400px;
-        margin-right: 300px;
-        
-            
+        border: 1px solid var(--gelo);
+        font-size: 18px;
+}
+.mudancaDeCor {
+    color: red; /* Exemplo: Muda a cor do ícone para vermelho */
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    font-size: 18px;
+}
+.mudancaDeCor {
+    color: red; /* Muda a cor do ícone para vermelho */
+    border: 1px solid red; /* Muda a borda para vermelho */
 }

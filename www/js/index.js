@@ -26,8 +26,11 @@ fetch('js/backend.json')
                                             </span>
                                         </div>
                                         <div class="price">
+                                        <span><buttom><i class="heartMenu ri-heart-3-line"></i></buttom></span>
                                         ${produto.preco_promocional.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</div>
+                                        
                                     </a>
+
                                 </div>                                          
             `;
     
@@ -38,6 +41,13 @@ fetch('js/backend.json')
         var id = $(this).attr('data-id');
         localStorage.setItem('detalhe', id);
         app.views.main.router.navigate('/detalhes/');
+    });
+
+    $(document).on('click', '.heartMenu', function (e) {
+        e.stopPropagation(); // Previne a propagação do clique para o link pai
+        var id = $(this).closest('.item-card').find('.item').attr('data-id');
+        console.log('Produto adicionado aos favoritos:', id);
+        // Adicione aqui a lógica para adicionar o item aos favoritos
     });
 
 

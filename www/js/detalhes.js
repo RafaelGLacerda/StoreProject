@@ -71,3 +71,31 @@ $(".add-cart").on('click', function (){
         toastCenter.open();
 
 });
+
+// FAVORITOS
+var favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+function adicionarAoFav(item){
+    var itemNoFav = favoritos.find(f=> f.item.id === item.id)
+
+    if(itemNoFav){
+        itemNoFav;
+    }else{
+        favoritos.push({
+            item: item
+        })
+    }
+
+    localStorage.setItem('favoritos', JSON.stringify(favoritos))
+
+}
+
+$(".coracao").on('click', function(){
+    adicionarAoFav(item, 1);
+
+    var toastCenter = app.toast.create({
+        text: `${itemNome} foi Favoritado`,
+        position: 'center',
+        closeTimeout: 2000,
+    });
+})

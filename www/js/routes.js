@@ -126,6 +126,7 @@ var app = new Framework7({
 		},
 		pageInit: function (event, page) {
 		// fazer algo quando a página for inicializada
+    $.getScript('js/favoritos.js');
 		},
 		pageBeforeRemove: function (event, page) {
 		// fazer algo antes da página ser removida do DOM
@@ -168,6 +169,8 @@ var app = new Framework7({
   pageInit: function (event, page) {
   // fazer algo quando a página for inicializada
   $.getScript('js/detalhes.js');
+  // fazer o botão de favoritar funcionar na pagina de detalhes
+  $.getScript('js/favoritos.js');
   },
   pageBeforeRemove: function (event, page) {
   // fazer algo antes da página ser removida do DOM

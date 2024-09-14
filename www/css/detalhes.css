@@ -39,12 +39,10 @@
     border: 1px solid var(--gelo);
     font-size: 18px;
 }
-
 .buttons-top a:first-child{
     margin-left: 20px;
     margin-right: auto;
 }
-
 .buttons-top a:last-child{
     margin-right: 20px;
     margin-left: 5px;

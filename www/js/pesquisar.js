@@ -1,17 +1,31 @@
-fetch('js/backend.json')
-    .then(response => response.json())
-    .then(data=> {
-    // salvar os dados vindos do back-end localmente
-    localStorage.setItem('produtos', JSON.stringify(data));
-    console.log('Dados dos produtos salvos no localStorage');
+$(document).ready(function() {
+    // Função para carregar produtos do arquivo JSON
+    function carregarProdutos() {
+        $.getJSON('backend.json', function(data) {
+            window.produtos = data; // Armazena os produtos em uma variável global
+            atualizarProdutos(''); // Inicialmente mostra todos os produtos
+        }).fail(function() {
+            console.error('Erro ao carregar o arquivo JSON.');
+        });
+    }
     
-    setTimeout(() =>{
+    carregarProdutos(); // Chama a função ao carregar a página
 
-        $("#produtos").empty();
+    // Função para atualizar a exibição dos produtos com base na pesquisa
+    function atualizarProdutos(filtro) {
+        $('.page-content .block').empty(); // Limpa o conteúdo existente
 
-        data.forEach(produto =>{
-            var produtoHTML = `
-                                <!-- ITEM CARD -->
+        if (!window.produtos) {
+            console.error('Produtos não carregados.');
+            return;
+        }
+
+        const filtroLower = filtro.toLowerCase();
+        
+        window.produtos.forEach(produto => {
+            if (produto.nome.toLowerCase().includes(filtroLower)) {
+                const itemHtml = `
+                                  <!-- ITEM CARD -->
                                 <div class="item-card">
                                     <a data-id="${produto.id}" href="#" class="item">
                                         <div class="img-container">
@@ -33,33 +47,14 @@ fetch('js/backend.json')
 
                                 </div>                                          
             `;
-    
-            $("#produtos").append(produtoHTML);
+                $('.page-content .block').append(itemHtml);
+            }
+        });
+    }
+
+    // Evento de pesquisa
+    $('#outroSearch').on('input', function() {
+        const filtro = $(this).val();
+        atualizarProdutos(filtro);
     });
-    
-    $(document).on('click', '.item', function () {
-        var id = $(this).attr('data-id');
-        localStorage.setItem('detalhe', id);
-        app.views.main.router.navigate('/detalhes/');
-    });
-
-    $(document).on('click', '.heartMenu', function (e) {
-        e.stopPropagation(); // Previne a propagação do clique para o link pai
-        var id = $(this).closest('.item-card').find('.item').attr('data-id');
-        console.log('Produto adicionado aos favoritos:', id);
-        // Adicione aqui a lógica para adicionar o item aos favoritos
-    });
-
-
-    }, 700);
-})  
-.catch(error => console.error('Erro ao fazer fetch dos dados: ' +error));
-
-
-setTimeout(() => {
-    var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-    $('.btn-cart').attr('data-count', carrinho.length)
-    
-}, 300);
-
+});

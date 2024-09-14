@@ -9,7 +9,7 @@
     font-size: 24px;
     padding: 10px 20px;
     border: 2px solid #2196f3; /* Borda azul (cor do tema) */
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 100px; /* Bordas arredondadas */
     background-color: #e3f2fd; /* Fundo claro */
     color: #0d47a1; /* Cor do texto */
     position: relative;

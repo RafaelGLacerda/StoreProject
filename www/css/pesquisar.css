@@ -1,0 +1,61 @@
+/* CSS para a borda bonita do título */
+.Pesquisartitulo {
+    text-align: center;
+    margin-top: 19px; /* Adiciona margem superior para mover o título para baixo */
+}
+
+.Pesquisartitulo .title {
+    display: inline-block;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: 2px solid #2196f3; /* Borda azul (cor do tema) */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: #e3f2fd; /* Fundo claro */
+    color: #0d47a1; /* Cor do texto */
+    position: relative;
+}
+
+.Pesquisartitulo .title::before,
+.Pesquisartitulo .title::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #2196f3; /* Cor da linha */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.Pesquisartitulo .title::before {
+    left: -40px;
+}
+
+.Pesquisartitulo .title::after {
+    right: -40px;
+}
+/* CSS para o campo de busca e ícone */
+/* CSS para o campo de busca e ícone */
+form {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente o campo de busca e o ícone */
+    align-items: center; /* Alinha verticalmente o campo de busca e o ícone */
+    margin: 25px auto 0; /* Ajusta a margem superior conforme necessário */
+    width: 90%; /* Ajusta a largura do form */
+}
+
+#outroSearch {
+    flex: 1; /* Faz o campo de busca ocupar o máximo de espaço disponível */
+    height: 50px;
+    border-radius: 100px;
+    padding: 10px 20px; /* Padding interno do campo de busca */
+    background: var(--gelo);
+    border: 1px solid black; /* Corrige a propriedade de cor de fundo e borda */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+.icone-search {
+    font-size: 24px; /* Ajusta o tamanho do ícone conforme necessário */
+    color: #2196f3; /* Cor do ícone (ou ajuste conforme necessário) */
+    margin-left: -40px; /* Ajuste a posição do ícone para que ele fique sobrepondo um pouco o campo de busca */
+}
+

@@ -7,7 +7,6 @@
 
 .navbar {
     font-weight: 600;
-    color: Crimson;
     display: flex;
     justify-content: flex-start; /* Alinha os itens à esquerda */
     align-items: center;
@@ -18,9 +17,9 @@
     display: flex;
     align-items: center; /* Alinha o texto e o ícone verticalmente */
     margin-left: -3%;
-    font-size: 24px; /* Ajuste o tamanho da fonte do título */
+    font-size: 50px; /* Ajuste o tamanho da fonte do título */
     color: crimson;
-   
+  
 }
 
 .heart {

@@ -20,7 +20,9 @@ var app = new Framework7({
     {
       path: '/index/',
       url: 'index.html',
-      animate: false,
+      options: {
+        transition: 'f7-circle',
+      },
 	  on: {
 		pageBeforeIn: function (event, page) {
 		// fazer algo antes da página ser exibida
@@ -97,7 +99,9 @@ var app = new Framework7({
     {
       path: '/pesquisar/',
       url: 'pesquisar.html',
-      animate: false,
+      options: {
+        transition: 'f7-parallax',
+      },
 	  on: {
 		pageBeforeIn: function (event, page) {
 		// fazer algo antes da página ser exibida
@@ -117,7 +121,9 @@ var app = new Framework7({
     {
       path: '/favoritos/',
       url: 'favoritos.html',
-      animate: false,
+      options: {
+        transition: 'f7-parallax',
+      },
 	  on: {
 		pageBeforeIn: function (event, page) {
 		// fazer algo antes da página ser exibida
@@ -137,7 +143,9 @@ var app = new Framework7({
     {
     path: '/perfil/',
     url: 'perfil.html',
-    animate: false,
+    options: {
+      transition: 'f7-parallax',
+    },
   on: {
   pageBeforeIn: function (event, page) {
   // fazer algo antes da página ser exibida
